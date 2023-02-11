@@ -1,0 +1,346 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.collapsed {
+  display: none;
+}
+
+.nav {
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+.nav .mobile-header {
+  display: none;
+}
+.nav .mobile-header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+.nav .mobile-header .header .more button {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+}
+.nav .logo {
+  min-width: 250px;
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  gap: 5px;
+  color: #00c3ff;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 20px 25px;
+}
+.nav a:hover {
+  color: black;
+  background-color: #00c3ff;
+  transition: all 1s ease;
+}
+.nav .desktop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.nav .desktop-header .primary {
+  display: flex;
+}
+.nav .desktop-header .secondary {
+  display: flex;
+}
+.nav .desktop-header .secondary.mini {
+  display: none;
+}
+
+.container-principal {
+  background: #f3f3f3;
+  height: 100%;
+  transition: 0.5s;
+}
+.container-principal.active {
+  background-color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  height: 100%;
+}
+
+.encabezado {
+  padding: 40px 0;
+}
+.encabezado .logo-encabezado {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.encabezado .logo-encabezado p {
+  color: #9B9B9B;
+}
+.encabezado form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.encabezado .barra-busqueda {
+  width: 70%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  padding: 0 20px;
+  border-radius: 100px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+}
+.encabezado .categorias {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.encabezado .categorias a {
+  color: #9B9B9B;
+  margin: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.encabezado .categorias a.activo {
+  color: #000;
+}
+
+#toggle {
+  position: relative;
+  display: block;
+  width: 130px;
+  height: 50px;
+  border-radius: 70px;
+  background: #222;
+  transition: 0.5s;
+  margin: auto;
+}
+#toggle .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #444, #222);
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+#toggle.active {
+  background: #f3f3f3;
+}
+#toggle.active .indicator {
+  left: 80px;
+  background: linear-gradient(to bottom, #bdbbbb, #dedddd);
+}
+
+.btn-encendido p#p1 {
+  font-size: 12px;
+  color: #222;
+  font-weight: 600;
+}
+.btn-encendido p#p2 {
+  font-size: 12px;
+  color: #f3f3f3;
+  font-weight: 600;
+}
+
+/*GRID MUURI*/
+.grid.imagenes-cargadas {
+  opacity: 1;
+}
+
+.grid {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s linear 1s;
+}
+.grid .item {
+  position: absolute;
+  display: block;
+  padding: 0;
+  margin: 10px;
+  width: calc(33.3333% - 20px);
+  height: 200px;
+  margin-bottom: 33.3333px;
+}
+.grid .item img {
+  width: 100%;
+  cursor: pointer;
+  vertical-align: top;
+  border-radius: 20px;
+}
+.grid .item img:hover {
+  transform: translateY(-1.5rem);
+  transition: 0.5s all ease;
+}
+.grid .item-contenido {
+  position: relative;
+}
+
+/*OVERLAY*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.overlay img {
+  max-width: 100%;
+  border-radius: 20px;
+}
+.overlay .descripcion {
+  display: block;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 5px;
+  border-radius: 10px;
+  max-width: 50%;
+}
+.overlay #btn-cerrar {
+  background: none;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: -40px;
+  top: -20px;
+}
+
+.overlay.activo {
+  display: flex;
+}
+
+.contenedor-img {
+  position: relative;
+}
+
+/*FOOTER*/
+footer .redes-sociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+footer .redes-sociales .twitter {
+  background: #1da1f2;
+}
+footer .redes-sociales .facebook {
+  background: #3b5998;
+}
+footer .redes-sociales .linkedin {
+  background: #334f8b;
+}
+footer .redes-sociales .instagram {
+  background: #DA004F;
+}
+
+footer .redes-sociales a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #000;
+  color: white;
+  margin: 20px;
+  text-align: center;
+  border-radius: 95px;
+  transition: 3.5s;
+}
+footer .redes-sociales a i {
+  font-size: 20px;
+  line-height: 60px;
+}
+
+/*Animacion footer*/
+footer .contenedor-icono:hover a {
+  animation: icono 0.5s ease;
+}
+
+@keyframes icono {
+  from {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+/*PEQUENA DESCRIPCION AL FINAL*/
+.creado-por p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.creado-por .check {
+  margin-left: 10px;
+  color: #00c3ff;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 890px) {
+  .nav .logo {
+    min-width: 100px;
+  }
+  .nav .desktop-header .secondary.full {
+    display: none;
+  }
+  .nav .desktop-header .secondary.mini {
+    display: block !important;
+  }
+  .nav .desktop-header .secondary.mini .submenu {
+    background-color: black;
+    position: absolute;
+    display: none;
+    width: 200px;
+    right: 0;
+  }
+  .nav .desktop-header .secondary.mini:hover .submenu {
+    display: block;
+  }
+}
+@media screen and (max-width: 660px) {
+  .nav .desktop-header {
+    display: none;
+  }
+  .nav .mobile-header {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
